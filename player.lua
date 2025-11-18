@@ -31,6 +31,7 @@ function player.respawn()
     player.onGround = false
 end
 
+-- Apply gravity and move player
 function player.update(dt, gravity)
     -- Set horizontal velocity
     if love.keyboard.isDown("left") then
@@ -41,14 +42,8 @@ function player.update(dt, gravity)
         player.vx = 0
     end
 
-    -- Apply gravity
     player.vy = player.vy + gravity * dt
-
-    -- Move horizontally
     player.x = player.x + player.vx * dt
-
-    -- Move vertically
-    local previousY = player.y
     player.y = player.y + player.vy * dt
     player.onGround = false
 end

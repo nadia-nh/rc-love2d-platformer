@@ -72,5 +72,4 @@ function isColliding(obj1, obj2)
            y2 < y1 + h1
 end
 
-
 return coins

@@ -39,7 +39,11 @@ function love.load()
     coins.load(images)
     platforms.load(images)
 
-    -- Ground platforms
+    initializePlatforms()
+end
+
+-- Ground platforms + floating platforms with coins
+function initializePlatforms()
     local groundY = 380
     for i = 1, 3 do
         platforms.addPlatform(platformWidth * (i - 1), groundY)
@@ -96,7 +100,6 @@ function love.keypressed(key)
         player.jump(jumpStrength)
     end
 
-    -- Quit
     if key == "escape" then
         love.event.quit()
     end
@@ -111,7 +114,7 @@ function love.draw()
 end
 
 function drawBackground()
-    love.graphics.clear(0.4, 0.7, 1.0) -- fallback blue sky
+    love.graphics.clear(0.4, 0.7, 1.0) -- blue sky
 end
 
 function drawUIText()
