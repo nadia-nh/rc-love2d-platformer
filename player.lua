@@ -8,19 +8,13 @@ function player.load(images)
     playerImg = images.playerImg
     player.w = playerImg:getWidth()
     player.h = playerImg:getHeight()
+    player.speed = 100
 
-    -- Spawn position (where the player starts and respawns)
+    -- Spawn position
     player.spawnX = 100
     player.spawnY = 300
 
-    -- Current position
-    player.x = player.spawnX
-    player.y = player.spawnY
-
-    player.vx = 0
-    player.vy = 0
-    player.speed = 100
-    player.onGround = false
+    player.respawn()
 end
 
 function player.respawn()
