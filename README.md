@@ -1,6 +1,8 @@
 ## RC LÖVE2D Platformer
 
-Small learning project built at the recurse center with LÖVE2D to explore the engine. It features a player that can jump over platforms in order to collect coins, when the player falls off the map it respawn at the initial position and the coins are reset. This game includes basic gravity and platform collision (landing on top of platforms).
+<img width="1592" height="956" alt="screenshot" src="screenshot-rc-love-platformer.png" />
+
+Small learning project built at the [Recurse Center](https://www.recurse.com/) with LÖVE2D to explore the engine. It features a player that can jump over platforms in order to collect coins, when the player falls off the map it respawn at the initial position and the coins are reset. This game includes basic gravity and platform collision (landing on top of platforms).
 
 ### Running the game
 
