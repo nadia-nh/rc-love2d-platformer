@@ -21,7 +21,7 @@ You can also point LÖVE at this folder.
 
 Controls:
 - Left / Right arrow keys – move
-- Space – jump
+- Up – jump
 - Esc – quit
 
 ### How the game works
