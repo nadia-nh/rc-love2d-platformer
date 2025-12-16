@@ -8,7 +8,7 @@ local coins = require("coins")
 -- Physics/gameplay constants
 local gravity = 700       -- downward acceleration
 local jumpStrength = 400
-local ABYSS_Y
+local OUT_OF_BOUNDS_Y
 
 -- Images will be stored here after loading
 local images = {}
@@ -26,7 +26,7 @@ function love.load()
     local windowWidth, windowHeight = love.graphics.getDimensions()
 
     -- Player falls this far below the screen before respawning
-    ABYSS_Y = windowHeight + 100
+    OUT_OF_BOUNDS_Y = windowHeight + 100
 
     -- Load images from the assets folder
     images.playerImg   = love.graphics.newImage("assets/player.png")
@@ -106,7 +106,7 @@ function love.update(dt)
     coins.update(dt)
 
     -- If player has fallen too far, respawn and reset coins
-    if player.y > ABYSS_Y then
+    if player.y > OUT_OF_BOUNDS_Y then
         player.respawn()
         coins.reset()
     end
