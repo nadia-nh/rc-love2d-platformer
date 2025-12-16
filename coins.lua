@@ -27,6 +27,7 @@ function coins.update(dt)
     -- Placeholder function in case we want to add animations or effects later
 end
 
+-- Check for player/coin collisions and collect the coin if they overlap
 function coins.handleCollection(player)
     for _, coin in ipairs(coins) do
         if not coin.collected and isColliding(player, coin) then
