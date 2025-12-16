@@ -14,11 +14,11 @@ cd rc-love2d-platformer
 
 Run with LÖVE:
 
-1. From inside the folder
+1. Either run from inside the folder
 ```
   love ./
 ```
-2. Point LÖVE at this folder
+2. Or point LÖVE at the folder
 ```
   love <path-to-folder>\rc-love2d-platformer\
 ```
