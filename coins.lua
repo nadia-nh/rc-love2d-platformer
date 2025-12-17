@@ -1,4 +1,5 @@
---coins.lua
+-- coins.lua
+-- Manages coin placement, collection, and rendering
 
 local coins = {}
 
@@ -8,11 +9,13 @@ local coinHeight
 local coinCount = 0
 
 function coins.load(images)
+    -- Load coin sprite and get the image size
     coinImg = images.coinImg
     coinWidth = coinImg:getWidth()
     coinHeight = coinImg:getHeight()
 end
 
+-- Add a coin at a given world position
 function coins.addCoin(x, y)
     table.insert(coins, {
         x = x,
@@ -23,11 +26,11 @@ function coins.addCoin(x, y)
     })
 end
 
+-- Placeholder in case we add animations or effects later
 function coins.update(dt)
-    -- Placeholder function in case we want to add animations or effects later
 end
 
--- Check for player/coin collisions and collect the coin if they overlap
+-- Check for player/coin overlap and collect coins
 function coins.handleCollection(player)
     for _, coin in ipairs(coins) do
         if not coin.collected and isColliding(player, coin) then
@@ -41,6 +44,7 @@ function coins.getCount()
     return coinCount
 end
 
+-- Reset all coins to uncollected state
 function coins.reset()
     for _, coin in ipairs(coins) do
         coin.collected = false
@@ -56,7 +60,7 @@ function coins.draw()
     end
 end
 
--- Simple AABB collision helper
+-- Axis-Aligned Bounding Box (AABB) collision check
 function isColliding(obj1, obj2)
     local x1 = obj1.x
     local y1 = obj1.y

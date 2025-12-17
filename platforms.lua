@@ -1,4 +1,5 @@
---platforms.lua
+-- platforms.lua
+-- Manages platform placement, collisions, and drawing
 
 local platforms = {}
 
@@ -7,11 +8,13 @@ local platformWidth
 local platformHeight
 
 function platforms.load(images)
+    -- Load platform sprite and get the image size
     platformImg = images.platformImg
     platformWidth = platformImg:getWidth()
     platformHeight = platformImg:getHeight()
 end
 
+-- Add a platform at a given world position
 function platforms.addPlatform(x, y)
     table.insert(platforms, {
         x = x,
@@ -21,18 +24,19 @@ function platforms.addPlatform(x, y)
     })
 end
 
+-- Placeholder in case we add movement or effects later
 function platforms.update(dt)
-    -- Placeholder function in case we want to add animations or effects later
 end
 
+-- Resolve player/platform collisions (landing on top of platforms)
 function platforms.resolveCollisions(player, previousY)
     for _, p in ipairs(platforms) do
         if isColliding(player, p) then
             local previousBottom = previousY + player.h
             local platformTop = p.y
 
-            -- If we were above the platform last frame and now intersect it,
-            -- snap to the top of the platform.
+            -- If the player was above the platform last frame,
+            -- snap them to the top and stop downward movement
             if previousBottom <= platformTop then
                 player.y = platformTop - player.h
                 player.vy = 0
@@ -48,7 +52,7 @@ function platforms.draw()
     end
 end
 
--- Simple AABB collision helper
+-- Axis-Aligned Bounding Box (AABB) collision check
 function isColliding(obj1, obj2)
     local x1 = obj1.x
     local y1 = obj1.y
