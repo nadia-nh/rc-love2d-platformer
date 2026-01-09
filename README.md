@@ -4,7 +4,9 @@
 
 Small learning project built at the [Recurse Center](https://www.recurse.com/) with [LÖVE2D](https://love2d.org/) to explore the engine. It features a player that can jump over platforms in order to collect coins, when the player falls off the map it respawn at the initial position and the coins are reset. This game includes basic gravity and platform collision (landing on top of platforms).
 
-### Running the game
+See it in action [here](https://forgepixel.itch.io/rc-love2d-platformer).
+
+### Running the game locally
 
 Clone the repo:
 ```
@@ -46,3 +48,4 @@ The logic is organized into a few small files:
 
 - [Sheepolution Löve2D Tutorial](https://www.sheepolution.com/learn/book/contents) - For platformer creation guide and collision logic
 - [Brackeys Games Platformer Bundle](https://brackeysgames.itch.io/brackeys-platformer-bundle) - For player, coin, and platform assets
+- [LÖVE.js Fork](https://github.com/Davidobot/love.js) - For exporting the game to web
