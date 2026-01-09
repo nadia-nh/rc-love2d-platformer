@@ -21,7 +21,7 @@ local coinHeight
 
 function love.load()
     -- Set window title and size
-    love.window.setTitle("Simple Platformer")
+    love.window.setTitle("RC Love2D Platformer")
     love.window.setMode(800, 450)
     local windowWidth, windowHeight = love.graphics.getDimensions()
 
@@ -113,7 +113,7 @@ function love.update(dt)
 end
 
 function love.keypressed(key)
-    if key == "up" then
+    if key == "up" or key == "w" then
         player.jump(jumpStrength)
     end
 
@@ -138,5 +138,5 @@ end
 -- Draw simple UI text for coins and controls
 function drawUIText()
     love.graphics.print("Coins: " .. coins.getCount(), 10, 10)
-    love.graphics.print("Arrows to move, Up to jump, Esc to quit", 10, 30)
+    love.graphics.print("Arrows or a/d to move, Up or w to jump, Esc to quit", 10, 30)
 end

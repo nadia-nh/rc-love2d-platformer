@@ -32,9 +32,9 @@ end
 -- Apply gravity and update player position
 function player.update(dt, gravity)
     -- Horizontal input
-    if love.keyboard.isDown("left") then
+    if (love.keyboard.isDown("left") or love.keyboard.isDown("a")) then
         player.vx = -player.speed
-    elseif love.keyboard.isDown("right") then
+    elseif (love.keyboard.isDown("right") or love.keyboard.isDown("d")) then
         player.vx = player.speed
     else
         player.vx = 0
