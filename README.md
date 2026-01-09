@@ -49,3 +49,7 @@ The logic is organized into a few small files:
 - [Sheepolution Löve2D Tutorial](https://www.sheepolution.com/learn/book/contents) - For platformer creation guide and collision logic
 - [Brackeys Games Platformer Bundle](https://brackeysgames.itch.io/brackeys-platformer-bundle) - For player, coin, and platform assets
 - [LÖVE.js Fork](https://github.com/Davidobot/love.js) - For exporting the game to web
+
+---
+
+Made with <3 at [The Recurse Center](https://recurse.com).
